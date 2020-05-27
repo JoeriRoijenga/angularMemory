@@ -1,0 +1,23 @@
+.center-div {
+  display: flex;
+  margin: auto;
+}
+
+.center-div-object {
+  margin: auto;
+}
+
+.inactive {
+  background-color: red;
+}
+
+.active {
+  background-color: green;
+}
+
+.found {
+  background-color: purple;
+  cursor: default;
+}
+
+/*# sourceMappingURL=tile.component.css.map */

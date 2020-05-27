@@ -1,0 +1,5 @@
+<table id="speelveld">
+  <tr *ngFor="let letterRow of letters">
+    <td *ngFor="let letter of letterRow" app-tile [letter]="letter" [char]="char" [style.height.%]="height" (saveTile)="saveTile($event)" (resetTiles)="resetTiles()"></td>
+  </tr>
+</table>

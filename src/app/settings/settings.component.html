@@ -1,0 +1,19 @@
+<table id="meta">
+  <tr>
+    <td>
+
+      <app-topscores></app-topscores>
+      <app-options (sizeOutput)="saveSize($event)" (characterOutput)="saveCharacter($event)" ></app-options>
+    </td>
+  </tr>
+  <tr>
+    <app-colors></app-colors>
+  </tr>
+  <tr>
+    <td>
+      <script>
+      </script>
+      <button id="opnieuw" (click)="changeSettings()">Nieuw Spel</button>
+    </td>
+  </tr>
+</table>

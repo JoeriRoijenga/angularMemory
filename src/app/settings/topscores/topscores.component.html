@@ -1,0 +1,7 @@
+<b>Top vijf</b>
+<ol>
+  <li *ngFor="let player of topScores">
+    {{ player.name }} : {{ player.time }}
+  </li>
+</ol>
+<b>Gemiddelde speeltijd:</b> <span id="gemiddeld"> {{avgTime}}s (+{{avgDiff}}s)</span><br/><br/>

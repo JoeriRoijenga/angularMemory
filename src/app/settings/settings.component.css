@@ -1,0 +1,19 @@
+table#meta {
+  position: fixed;
+  right: 4vw;
+  top: 10vw;
+  width: 25vw;
+  height: 70vh;
+}
+
+table#meta td {
+  vertical-align: top;
+  text-align: left;
+  padding: 1%;
+}
+
+table#meta tr {
+  text-align: left;
+}
+
+/*# sourceMappingURL=settings.component.css.map */

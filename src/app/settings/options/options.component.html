@@ -1,0 +1,9 @@
+<b>Karakter op kaarten:</b>
+<select name="character" #character (change)="onCharacterChange(character.value)">
+  <option *ngFor="let char of characters" value="{{char}}" [selected]="char == standardChar">{{char}}</option>
+</select>
+<br>
+<b>Afmeting bord:</b>
+<select name="size" #size (change)="onSizeChange(size.value)">
+  <option *ngFor="let size of sizes" value="{{size}}" [selected]="size == standardSize">{{size}}</option>
+</select>
