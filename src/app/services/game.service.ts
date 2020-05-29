@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from "rxjs";
 
 @Injectable()
-export class AppService {
+export class GameService {
   private sizeSource = new BehaviorSubject<number>(6);
   public currentSize = this.sizeSource.asObservable();
 
@@ -46,7 +46,7 @@ export class AppService {
     this.scoreSource.next(time);
   }
 
-  public loadbadStateChange(state: boolean): void {
+  public loadbarStateChange(state: boolean): void {
     this.loadBarSource.next(state);
   }
 

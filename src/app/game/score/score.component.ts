@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-score',
@@ -11,7 +11,7 @@ export class ScoreComponent implements OnInit {
   public time: number = 0;
   private intervalID: number;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: GameService) { }
 
   ngOnInit(): void {
     this.appService.currentFound.subscribe(found => this.found = found);

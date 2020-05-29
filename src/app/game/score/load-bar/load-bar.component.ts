@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../app.service';
+import { GameService } from '../../../services/game.service';
 
 @Component({
   selector: 'app-load-bar',
@@ -10,7 +10,7 @@ export class LoadBarComponent implements OnInit {
   private intervalID: number;
   public width: number = 100;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: GameService) { }
 
   ngOnInit(): void {
     this.appService.loadBarNew.subscribe((state) => {

@@ -1,11 +1,13 @@
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SettingsModule } from './settings/settings.module';
-import { ScoreModule } from "./score/score.module";
-import { BoardModule } from "./board/board.module";
-import {AppService} from "./app.service";
+import { AuthInterceptor } from './auth-interceptor';
+import { GameModule } from './game/game.module';
+import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -13,11 +15,18 @@ import {AppService} from "./app.service";
   ],
   imports: [
     BrowserModule,
-    SettingsModule,
-    ScoreModule,
-    BoardModule
+    GameModule,
+    HomeModule,
+    LoginModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [AppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor
+    }
+  ]
 })
 export class AppModule { }

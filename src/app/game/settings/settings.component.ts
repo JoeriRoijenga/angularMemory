@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AppService} from "../app.service";
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-settings',
@@ -10,7 +10,7 @@ export class SettingsComponent implements OnInit {
   size: number;
   character: string;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: GameService) { }
 
   ngOnInit() { }
 

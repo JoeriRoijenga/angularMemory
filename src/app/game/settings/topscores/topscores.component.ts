@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../app.service';
+import { GameService } from '../../../services/game.service';
 
 @Component({
   selector: 'app-topscores',
@@ -28,7 +28,7 @@ export class TopscoresComponent implements OnInit {
   public avgTime: number;
   public avgDiff: number;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: GameService) { }
 
   ngOnInit(): void {
     let total:number = 0;

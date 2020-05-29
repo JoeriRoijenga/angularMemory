@@ -1,0 +1,24 @@
+<h2>Login</h2>
+<form class="flex-column-centered form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="name">Username</label><br>
+    <input type="text" id="name" [formControl]="name">
+  </p>
+  <p *ngIf="name.invalid && (name.dirty && name.touched)" class="error-container">
+    <span *ngIf="name.errors.required">The name field is required</span>
+  </p>
+  <p>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" [formControl]="password">
+  </p>
+  <p *ngIf="password.invalid && (password.dirty && password.touched)" class="error-container">
+    <span *ngIf="password.errors.required">The password field is required</span>
+  </p>
+  <p *ngIf="error" class="error-container">
+    {{ errorMessage }}
+  </p>
+  <hr>
+  <button class="button">
+    Login
+  </button>
+</form>

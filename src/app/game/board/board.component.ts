@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {AppService} from "../app.service";
+import { GameService } from '../../services/game.service';
 import { TileComponent } from './tile/tile.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class BoardComponent implements OnInit {
   private currentFound: number;
   private firstTime: boolean;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: GameService) { }
 
   public height: number;
 
@@ -74,7 +74,7 @@ export class BoardComponent implements OnInit {
 
     if (this.tileOne == null) {
       this.tileOne = tile;
-      this.appService.loadbadStateChange(true);
+      this.appService.loadbarStateChange(true);
     } else if (this.tileTwo == null) {
       this.tileTwo = tile;
     }
@@ -97,7 +97,7 @@ export class BoardComponent implements OnInit {
       this.tileTwo.resetTile();
       this.tileTwo = null;
     }
-    this.appService.loadbadStateChange(false);
+    this.appService.loadbarStateChange(false);
   }
 
   private foundTiles(): void {
@@ -109,7 +109,7 @@ export class BoardComponent implements OnInit {
     if (this.currentFound == this.size) {
       this.appService.timerEvent(2);
     }
-    this.appService.loadbadStateChange(false);
+    this.appService.loadbarStateChange(false);
   }
 }
 
